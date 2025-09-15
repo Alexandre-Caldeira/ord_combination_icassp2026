@@ -1,0 +1,32 @@
+# ===================================================================
+# MONTE CARLO SIMULATION CONFIGURATION
+# ===================================================================
+
+# --- File Paths & Batching ---
+simulation:
+  # IMPORTANT: Use forward slashes '/' for paths, even on Windows.
+  hdf5_filepath: 'data/eval_v4.hdf5'
+  total_trials_goal: 5000
+  # Number of trials to run in a single parallel batch (adjust based on RAM).
+  # A smaller batch size means more frequent saves but slightly more overhead.
+  batch_size: 1000
+  # Number of trials to save the full time-domain signal for.
+  time_domain_saves: 10
+  # Number of CPU cores to use. Set to 0 to use all available cores.
+  cpu_cores: 0
+
+# --- Signal & Simulation Parameters ---
+parameters:
+  fs: 1000
+  nfft: 1000
+  n_windows: 120
+  # Use a list of floats for YAML compatibility.
+  snr_range: [-30.0, -27.5, -25.0, -22.5, -20.0, -17.5, -15.0, -12.5, -10.0, -7.5, -5.0, -2.5, 0.0, 2.5, 5.0]
+  signal_freqs: [82, 84, 86, 88, 90, 92, 94, 96]
+  # Noise frequencies selected to avoid harmonics and known artifacts.
+  noise_freqs: [131, 137, 149, 151, 157, 163, 167, 173]
+
+# --- Randomness Control ---
+# The seed for reproducible results.
+# Changing this will result in a completely different set of random signals.
+master_seed: 42

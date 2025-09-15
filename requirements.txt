@@ -1,0 +1,27 @@
+# requirements.txt - Revised for better compatibility on Windows
+
+# Pin NumPy to a version before the major 2.0 update
+numpy<2.0
+
+# Core ML and RL libraries
+torch
+stable-baselines3
+gymnasium
+lightgbm
+sb3_contrib
+
+# Data handling and utilities
+h5py
+pyyaml
+scipy
+tqdm
+matplotlib
+tensorboard
+scikit-learn
+tqdm
+rich
+seaborn
+
+# For running in Jupyter
+ipykernel
+ipywidgets
