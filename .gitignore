@@ -214,3 +214,7 @@ data/**/*
 
 # But don't ignore data.md
 !data/data.md
+
+# Ignore presentations temporarily 
+*.ppt
+*.pptx
